@@ -97,7 +97,6 @@ const Profile = () => {
         </div>
       </div>
         <Routes>
-          
           <Route path="/mytuits" element={<MyTuits/>}/>
           <Route path="/tuits-and-replies" element={<TuitsAndReplies/>}/>
           <Route path="/media" element={<Media/>}/>

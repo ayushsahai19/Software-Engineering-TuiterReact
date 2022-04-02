@@ -70,7 +70,7 @@ const Profile = () => {
           <ul className="mt-4 nav nav-pills nav-fill">
             <li className="nav-item">
               <Link to="/profile/mytuits"
-                    className={`nav-link ${location.pathname.indexOf('mytuits') >= 0 ? 'active':''}`}>
+                    className={`nav-link ${location.pathname.indexOf('my-tuits') >= 0 ? 'active':''}`}>
                 Tuits</Link>
             </li>
             <li className="nav-item">
@@ -85,12 +85,12 @@ const Profile = () => {
             </li>
             <li className="nav-item">
               <Link to="/profile/likes"
-                    className={`nav-link ${location.pathname.indexOf('mylikes') >= 0 ? 'active':''}`}>
+                    className={`nav-link ${location.pathname.indexOf('my-likes') >= 0 ? 'active':''}`}>
                 Likes</Link>
             </li>
             <li className="nav-item">
               <Link to="/profile/dislikes"
-                    className={`nav-link ${location.pathname.indexOf('mydislikes') >= 0 ? 'active':''}`}>
+                    className={`nav-link ${location.pathname.indexOf('my-dislikes') >= 0 ? 'active':''}`}>
                 Dislikes</Link>
             </li>
           </ul>

@@ -30,7 +30,6 @@ const Home = () => {
   const findTuits = () =>
       service.findAllTuits()
           .then(tuits => {
-            console.log(tuits)
             setTuits(tuits)
           });
   useEffect(() => {
@@ -60,10 +59,15 @@ const Home = () => {
 
   function closeModal() {
     setIsOpen(false);
+    setFile('')
+    setFileUrl(null)
+  }
+
+  function submitHandle(){
+    setIsOpen(false);
   }
 
   function handleChange(e) {
-    console.log(e.target.files);
     setFile(e.target.files[0])
     setFileUrl(URL.createObjectURL(e.target.files[0]))
   }
@@ -112,15 +116,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Tuits tuits={tuits}
-               refreshTuits={findTuits} />
+        <Tuits tuits={tuits}  refreshTuits={findTuits} />
         <Modal
             isOpen={modalIsOpen}
             onClose={closeModal}
             style={customStyles}
             contentLabel="Image Upload">
           <i className="fa-solid fa-circle-xmark fa-lg" onClick={closeModal} style={{ float: "right" }}></i>
-
 
           <input type="file" onChange={handleChange} />
           <br />
@@ -129,7 +131,7 @@ const Home = () => {
           <img src={fileUrl} width={"40%"} height={"40%"} />
           <br /><br />
 
-          <button onClick={closeModal} className="btn btn-outline-primary m-1">
+          <button onClick={submitHandle} className="btn btn-outline-primary m-1">
             Submit
           </button>
         </Modal>

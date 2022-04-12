@@ -6,6 +6,8 @@ import TuitsAndReplies from "./tuits-and-replies";
 import Media from "./media";
 import MyLikes from "./my-likes";
 import MyDislikes from "./my-dislikes";
+import MyBookmarks from "./my-bookmarks";
+
 const Profile = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -93,6 +95,11 @@ const Profile = () => {
                     className={`nav-link ${location.pathname.indexOf('my-dislikes') >= 0 ? 'active':''}`}>
                 Dislikes</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/profile/bookmarkedtuits"
+                    className={`nav-link ${location.pathname.indexOf('my-bookmarks') >= 0 ? 'active':''}`}>
+                BookmarkedTuits</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -102,6 +109,7 @@ const Profile = () => {
           <Route path="/media" element={<Media/>}/>
           <Route path="/likes" element={<MyLikes/>}/>
           <Route path="/dislikes" element={<MyDislikes/>}/>
+          <Route path="/bookmarkedtuits" element={<MyBookmarks/>}/>
         </Routes>
     </div>
   );

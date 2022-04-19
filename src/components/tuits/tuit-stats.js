@@ -44,9 +44,13 @@ const TuitStats = ({tuit, likeTuit, dislikeTuit, bookmarkTuit, unbookmarkTuit = 
 
       <div className="col">
         <span className="ttr-bookmark-tuit-click" onClick={() => bookmarkTuit(tuit)}>
-  
-            <i className="fa-regular fa-bookmark" style={{color: 'blue'}}/>
-            
+          {
+            tuit.stats.bookmarks &&  <i className="fa-regular fa-bookmark fa-solid me-1" style={{color: 'blue'}}/>
+          }
+          {
+            !tuit.stats.bookmarks &&  <i className="fa-regular fa-bookmark" style={{color: 'blue'}}/>
+          }
+          {tuit.stats.bookmarks}
           </span>
       </div>
 

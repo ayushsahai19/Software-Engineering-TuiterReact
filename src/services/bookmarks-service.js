@@ -13,7 +13,7 @@ export const viewAllTuitsBookmarkedByUser = (userId) =>
         .then(response => response.data);
 
 export const unBookmarkTuit = (tid, uid) =>
-api.put(`${UNBOOKMARK_API}/${tid}/${uid}`)
+api.delete(`${UNBOOKMARK_API}/${tid}/${uid}`)
     .then(response => response.data);
 
 export const bookmarkTuit = (tid, uid) =>

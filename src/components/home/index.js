@@ -16,7 +16,8 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
   },
 };
-const Home = () => {
+//const TuitStats = ({tuit, likeTuit, dislikeTuit, bookmarkTuit, unbookmarkTuit = () => {}}) => {
+const Home = ({openModal = () => {} }) => {
   const location = useLocation();
   const { uid } = useParams();
   const { tid } = useParams();
@@ -92,7 +93,7 @@ const Home = () => {
                   <i className="fas fa-portrait me-3"></i>
                   <i className="far fa-gif me-3"></i>
 
-                  <i className="fa-solid fa-image me-3" onClick={openModal}></i>
+                  <i className="fa-solid fa-image me-3" onClick={openModal} data-testid="test-imageButton"></i>
                   <i className="far fa-bar-chart me-3"></i>
                   <i className="far fa-face-smile me-3"></i>
                   <i className="far fa-calendar me-3"></i>
